@@ -1,0 +1,23 @@
+
+   InvalidArgumentException  : Model name contains invalid characters.
+
+  at D:\projek\htdocs\kpcok\vendor\laravel\framework\src\Illuminate\Routing\Console\ControllerMakeCommand.php:159
+    155|      */
+    156|     protected function parseModel($model)
+    157|     {
+    158|         if (preg_match('([^A-Za-z0-9_/\\\\])', $model)) {
+  > 159|             throw new InvalidArgumentException('Model name contains invalid characters.');
+    160|         }
+    161| 
+    162|         $model = trim(str_replace('/', '\\', $model), '\\');
+    163|
+
+  Exception trace:
+
+  1   Illuminate\Routing\Console\ControllerMakeCommand::parseModel("Post$table-;")
+      D:\projek\htdocs\kpcok\vendor\laravel\framework\src\Illuminate\Routing\Console\ControllerMakeCommand.php:133
+
+  2   Illuminate\Routing\Console\ControllerMakeCommand::buildModelReplacements([])
+      D:\projek\htdocs\kpcok\vendor\laravel\framework\src\Illuminate\Routing\Console\ControllerMakeCommand.php:93
+
+  Please use the argument -v to see more details.
